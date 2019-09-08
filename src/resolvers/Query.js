@@ -7,10 +7,8 @@ const moviesFromDb = models.Movie;
 const actorsFromDB = models.Actor;
 const directorsFromDb = models.Director;
 
-const resolvers = {
-  Query: {
+const Query = {
     async movies(parent, args, context, info) {
-      console.log("gggg")
       const movies = await moviesFromDb.findAll();
       return movies;
     },
@@ -22,26 +20,6 @@ const resolvers = {
       const directors = await directorsFromDb.findAll();
       return directors;
     }
-  },
-  Movies: {
-    async actors(parent, args, context, info) {
-      const actors = await actorsFromDB.findAll({
-        where: {
-          movieId: parent.id
-        }
-      });
-      return actors;
-    }
-  },
-  Actors: {
-    async directors(parent, args, context, info) {
-      const directors = await directorsFromDb.findAll({
-        where: {
-          actorId: parent.id
-        }
-      });
-      return directors
-    }
-  }
 }
-export { resolvers  as default }
+
+export { Query  as default }

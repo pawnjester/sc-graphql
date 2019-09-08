@@ -10,7 +10,7 @@ const Op = sequelize.Op;
 const userFromDB = models.User;
 
 const Mutation = {
-  async createUser(args) {
+  async createUser(parent, args) {
     console.log(args.data)
     const hashedPassword = await bcrypt.hash(args.data.password, 10);
     const user = await userFromDB.create({
@@ -23,7 +23,7 @@ const Mutation = {
       user
     }
   },
-  async loginUser(args) {
+  async login(parent, args) {
     const user = await userFromDB.findOne({
       where: {
         name: {
