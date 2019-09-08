@@ -15,6 +15,11 @@ const resolvers = {
 const server = new GraphQLServer({
   typeDefs: './src/schema/schema.graphql',
   resolvers,
+  context(request) {
+    return {
+      request
+    }
+  }
 });
 
 db.sequelize

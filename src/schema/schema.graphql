@@ -13,6 +13,7 @@ type Query {
     id: ID!
     title: String!
     year: String!
+    scoutbase_rating: Int,
     rating: String!
     actors: [Actors!]!
     directors: [Directors!]!
