@@ -2,7 +2,7 @@
 
 ### This is a backend application using Graphql.
 
-###Technologies
+### Technologies
 - NodeJs
 - Postgres DB
 
