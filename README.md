@@ -5,12 +5,14 @@
 ### Technologies
 - NodeJs
 - Postgres DB
+- GraphQl
 
 ### Getting Started
 - Clone this repository
 - Run `npm install` to install the dependencies
 - Create an `.env` file using the format in  `.env.sample` in the root folder.
 - Run  ` sequelize db:migrate ` to run migrations on the database.
+- Run  `sequelize db:migrate:undo:all` to undo migrations if need be
 - Run  `npm run seeders` to run seeders to the database.
 - Run  `npm start` to start the development server.
 

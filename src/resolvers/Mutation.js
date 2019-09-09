@@ -11,7 +11,6 @@ const userFromDB = models.User;
 
 const Mutation = {
   async createUser(parent, args) {
-    console.log(args.data)
     const hashedPassword = await bcrypt.hash(args.data.password, 10);
     const user = await userFromDB.create({
       name: args.data.username,

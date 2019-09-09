@@ -12,6 +12,11 @@ const resolvers = {
   Movies,
   Actors
 }
+const options = {
+  endpoint: '/graphql',
+  port: 4000
+}
+
 const server = new GraphQLServer({
   typeDefs: './src/schema/schema.graphql',
   resolvers,
@@ -22,8 +27,9 @@ const server = new GraphQLServer({
   }
 });
 
+
 db.sequelize
   .authenticate()
   .then(() =>
-    server.start(() => console.log('The server is up'))
+    server.start(options, ({ port }) => console.log('The server is up'))
 )
