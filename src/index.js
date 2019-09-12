@@ -1,10 +1,12 @@
 import  { GraphQLServer } from 'graphql-yoga';
+import dotenv from 'dotenv';
+import 'dotenv/config';
 
 import Query from './resolvers/Query';
 import Mutation from './resolvers/Mutation';
 import Movies from './resolvers/Movies';
 import Actors from './resolvers/Actors';
-import db from '../models/index';
+import db from './models/index';
 
 const resolvers = {
   Query,
@@ -14,7 +16,7 @@ const resolvers = {
 }
 const options = {
   endpoint: '/graphql',
-  port: 4000
+  port: process.env.PORT
 }
 
 const server = new GraphQLServer({

@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development nodemon src/index.js --ext js,graphql --exec babel-node",
-    "seeders": "babel-node node_modules/.bin/sequelize db:seed:all --inspect"
+    "start": " babel-node src/index.js --ext js,graphql --exec",
+    "start:dev" : "nodemon src/index.js --ext js,graphql --exec babel-node",
+    "seeders": "babel-node node_modules/.bin/sequelize db:seed:all --inspect",
+    "build:server": "babel ./src -d ./dist",
+    "heroku-postbuild": "npm run build:server"
   },
   "keywords": [],
   "author": "",

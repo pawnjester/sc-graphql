@@ -1,6 +1,7 @@
 ## SC-BACKEND
 
 ### This is a backend application using Graphql.
+- It is hosted on `https://scoutbase-backend.herokuapp.com/`
 
 ### Technologies
 - NodeJs
@@ -11,6 +12,7 @@
 - Clone this repository
 - Run `npm install` to install the dependencies
 - Create an `.env` file using the format in  `.env.sample` in the root folder.
+- Create your Postgres database with the details given in `.env`  file.
 - Run  ` sequelize db:migrate ` to run migrations on the database.
 - Run  `sequelize db:migrate:undo:all` to undo migrations if need be
 - Run  `npm run seeders` to run seeders to the database.

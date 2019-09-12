@@ -1,6 +1,5 @@
 import sequelize from 'sequelize';
-
-import models from '../../models';
+import models from '../models';
 const Op = sequelize.Op;
 
 const moviesFromDb = models.Movie;

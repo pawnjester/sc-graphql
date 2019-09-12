@@ -1,6 +1,6 @@
 import sequelize from 'sequelize';
 
-import models from '../../models';
+import models from '../models';
 import { getUserId } from '../utils/auth'
 const Op = sequelize.Op;
 

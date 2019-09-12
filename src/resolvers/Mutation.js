@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
 import { validPassword } from '../utils/auth';
 import 'dotenv/config';
-import models from '../../models';
+import models from '../models';
 const Op = sequelize.Op;
 
 const userFromDB = models.User;
