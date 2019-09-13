@@ -5,10 +5,10 @@
 
 ### Technologies
 - NodeJs
-- Postgres DB
+- Postgres DB (Sequelize ORM )
 - GraphQl
 
-### Getting Started
+### Getting Started on development
 - Clone this repository
 - Run `npm install` to install the dependencies
 - Create an `.env` file using the format in  `.env.sample` in the root folder.
