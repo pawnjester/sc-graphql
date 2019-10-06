@@ -6,7 +6,6 @@ const url = env === 'production' ?
   process.env.DATABASE_URL :
   `${process.env.DATABASE_URL}${env}`;
 const devMode = env === ('development' || 'test');
-console.log(process.env.DATABASE_URL)
 const config = {
   url,
   dialect,

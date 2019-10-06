@@ -12,6 +12,16 @@ const userFromDB = models.User;
 const Mutation = {
   async createUser(parent, args) {
     const hashedPassword = await bcrypt.hash(args.data.password, 10);
+    const checkIfUser = await userFromDB.findOne({
+      where: {
+        name: {
+          [Op.like]: args.data.username
+        }
+      }
+    });
+    if (checkIfUser) {
+      throw new Error('Username already taken')
+    }
     const user = await userFromDB.create({
       name: args.data.username,
       password: hashedPassword
